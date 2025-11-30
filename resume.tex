@@ -1,0 +1,155 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Themes: Awesome-CV
+\documentclass[11pt, letterpaper]{awesome-cv}
+\newtoggle{resume} % whether this is a CV or resume
+
+%%% Override a directory location for fonts(default: 'fonts/')
+\fontdir[fonts/]
+
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{resume/}
+
+%%% CV/Resume Switch
+\toggletrue{resume} % un-comment for the shorter version, i.e. the resume
+
+
+%%% Override color
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+%% Color for highlight
+% Define your custom color if you don't like awesome colors
+% \colorlet{awesome}{awesome-blue}
+\definecolor{awesome}{HTML}{000000}
+%% Colors for text
+%\definecolor{darktext}{HTML}{414141}
+%\definecolor{text}{HTML}{414141}
+%\definecolor{graytext}{HTML}{414141}
+%\definecolor{lighttext}{HTML}{414141}
+
+%%% Override a separator for social informations in header(default: ' | ')
+%\headersocialsep[\quad\textbar\quad]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     3rd party packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Needed to divide into several files
+\usepackage{import}
+%%% For software columns
+\usepackage{multicol}
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=DarkBlue,
+}
+\urlstyle{same}
+% Change the colours if you want to
+% Gray-scale colors
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{5D5D5D}
+\definecolor{lightgray}{HTML}{999999}
+% Basic colors
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+% Text colors
+\definecolor{darktext}{HTML}{414141}
+\colorlet{text}{darkgray}
+\colorlet{graytext}{gray}
+\colorlet{lighttext}{lightgray}
+% Awesome colors
+\definecolor{awesome-emerald}{HTML}{00A388}
+\definecolor{awesome-skyblue}{HTML}{0395DE}
+\definecolor{awesome-red}{HTML}{DC3522}
+\definecolor{awesome-pink}{HTML}{EF4089}
+\definecolor{awesome-orange}{HTML}{FF6138}
+\definecolor{awesome-nephritis}{HTML}{27AE60}
+\definecolor{awesome-concrete}{HTML}{95A5A6}
+\definecolor{awesome-darknight}{HTML}{131A28}
+% Default Colors
+\definecolor{Mulberry}{HTML}{72243D}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% Custom Colors
+\definecolor{DarkBlue}{HTML}{266DA9}
+\definecolor{Ravenclaw}{HTML}{222f5b}
+
+\colorlet{heading}{black}
+\colorlet{accent}{DarkBlue}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Personal Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Essentials
+\name{}{Bryan L. Luu}
+\address{}
+\mobile{}
+%%% Social
+\email{loc.bryan.luu@gmail.com}
+\github{bryanluu}
+\linkedin{bryan-luu}
+\homepage{bryanluu.github.io}
+%%% Optionals
+\position{Software Developer}
+% \quote{``Make the change that you want to see in the world."}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Make a footer for CV with three arguments(<left>, <center>, <right>)
+\makecvfooter
+  {}
+  {Bryan L. Luu~~~·~~~\iftoggle{resume}{Resume}{CV}}
+  {\thepage}
+
+\begin{document}
+%%% Make a header for CV with personal data
+\makecvheader
+
+
+%%% Import contents
+% \iftoggle{resume}{\import{\sectiondir}{summary.tex}}{}
+\import{\sectiondir}{summary.tex}
+\import{\sectiondir}{experience.tex}
+\newpage
+\import{\sectiondir}{education.tex}
+% \iftoggle{resume}{\import{\sectiondir}{skills.tex}}{}
+\import{\sectiondir}{skills.tex}
+% \newpage
+% \iftoggle{resume}{}{}
+\import{\sectiondir}{projects.tex}
+% \clearpage
+% \iftoggle{resume}{}{\import{\sectiondir}{extracurriculars.tex}}
+% \import{\sectiondir}{interests.tex}
+
+\end{document}
