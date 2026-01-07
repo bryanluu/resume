@@ -20,6 +20,7 @@
 %%% Themes: Awesome-CV
 \documentclass[11pt, letterpaper]{awesome-cv}
 \newtoggle{resume} % whether this is a CV or resume
+\newtoggle{private} % whether this information is private
 
 %%% Override a directory location for fonts(default: 'fonts/')
 \fontdir[fonts/]
@@ -29,7 +30,7 @@
 
 %%% CV/Resume Switch
 \toggletrue{resume} % un-comment for the shorter version, i.e. the resume
-
+% \toggletrue{private} % un-comment for public-facing version, without private information
 
 %%% Override color
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
@@ -111,8 +112,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Essentials
 \name{}{Bryan L. Luu}
-\address{}
-\mobile{}
+\iftoggle{private}{\address{Vancouver, BC, Canada}}{}
+\iftoggle{private}{\mobile{\href{tel:236-979-6669}{(+1) 236-979-6669}}}{\mobile{email for details}}
 %%% Social
 \email{loc.bryan.luu@gmail.com}
 \github{bryanluu}
